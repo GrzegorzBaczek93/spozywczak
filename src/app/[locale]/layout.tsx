@@ -1,10 +1,8 @@
 import { routing } from "@/src/i18n/routing";
 import "./globals.css";
-import Footer from "@/src/ui/components/footer/footer";
-import Header from "@/src/ui/components/header/header";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-import { ThemeProvider } from "@/src/theme/theme-provider";
+import Footer from "@/src/components/footer";
 
 type Props = {
   children: React.ReactNode;
@@ -19,15 +17,12 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html>
-      <body className="flex min-h-screen flex-col items-center antialiased bg-background">
-        <ThemeProvider defaultTheme="light">
-          <NextIntlClientProvider>
-            <Header />
-            <main className="grow">{children}</main>
-            <Footer />
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
+      <NextIntlClientProvider>
+        <body className="flex min-h-screen flex-col items-center antialiased">
+          <main className="grow">{children}</main>
+          <Footer />
+        </body>
+      </NextIntlClientProvider>
     </html>
   );
 }
