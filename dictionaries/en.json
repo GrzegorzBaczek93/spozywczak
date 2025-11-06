@@ -1,7 +1,8 @@
 {
   "common": {
-    "brandName": "Spożywczak",
     "aboutUs": "About us",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "signIn": "Sign in",
+    "language": "Language"
   }
 }
